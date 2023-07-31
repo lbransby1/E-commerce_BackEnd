@@ -4,36 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="390940ad-b088-4ed5-9d47-22aca40e7aee" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/E-commerce_BackEnd.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/configs/ApplicationContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/entities/Cart.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/entities/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/entities/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/entities/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/entities/impl/DefaultCart.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/entities/impl/DefaultOrder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/entities/impl/DefaultProduct.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/entities/impl/DefaultUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/menu/Menu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/menu/impl/MainMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/menu/impl/SettingsMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/menu/impl/ShopMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/menu/impl/SignInMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/menu/impl/SignUpMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/OrderManagementService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/ProductManagementService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/UserManagementService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/impl/DefaultOrderManagementService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/impl/DefaultProductManagementService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/impl/DefaultUserManagementService.java" afterDir="false" />
-    </list>
+    <list default="true" id="390940ad-b088-4ed5-9d47-22aca40e7aee" name="Changes" comment="Finished cart functionality" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -124,7 +95,19 @@
       <option name="presentableId" value="Default" />
       <updated>1690456521578</updated>
     </task>
+    <task id="LOCAL-00001" summary="Finished cart functionality">
+      <created>1690847178646</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1690847178647</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Finished cart functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished cart functionality" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/E_commerce_BackEnd$Main.ic" NAME="Main Coverage Results" MODIFIED="1690464949076" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
