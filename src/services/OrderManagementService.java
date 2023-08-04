@@ -1,5 +1,6 @@
 package services;
 
+import entities.Order;
 import entities.Product;
 
 import java.lang.reflect.Array;
@@ -7,14 +8,11 @@ import java.util.ArrayList;
 
 public interface OrderManagementService {
 
-    boolean isCreditCardNumberValid(String userInput);
+    void addOrder(Order order);
 
-    void setCreditCardNumber(String userInput);
+    ArrayList<Order> getOrdersByUserId(int userId);
 
-    void setProducts(ArrayList<Product> products);
+    ArrayList<Order> getOrders();
 
-    void setCustomerId(int customerId);
-
-    int getCustomerId();
 
 }

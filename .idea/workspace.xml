@@ -4,7 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="390940ad-b088-4ed5-9d47-22aca40e7aee" name="Changes" comment="Finished cart functionality" />
+    <list default="true" id="390940ad-b088-4ed5-9d47-22aca40e7aee" name="Changes" comment="Finished cart functionality">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/configs/ApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/configs/ApplicationContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/impl/DefaultOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/impl/DefaultOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/menu/impl/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menu/impl/MainMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/menu/impl/ShopMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menu/impl/ShopMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/menu/impl/SignUpMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menu/impl/SignUpMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/OrderManagementService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/OrderManagementService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/impl/DefaultOrderManagementService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/impl/DefaultOrderManagementService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/impl/DefaultUserManagementService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/impl/DefaultUserManagementService.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,12 +44,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="services.impl" />
@@ -102,7 +114,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690847178647</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Finished cart functionality">
+      <created>1690847312621</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1690847312621</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

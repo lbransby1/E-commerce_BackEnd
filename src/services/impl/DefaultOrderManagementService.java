@@ -1,33 +1,46 @@
 package services.impl;
 
+import entities.Order;
 import entities.Product;
 import services.OrderManagementService;
+import services.ProductManagementService;
 
 import java.util.ArrayList;
 
 public class DefaultOrderManagementService implements OrderManagementService {
-    @Override
-    public boolean isCreditCardNumberValid(String userInput) {
-        return false;
+
+    private ArrayList<Order> Orders;
+
+    private static DefaultOrderManagementService instance;
+    {
+        Orders = new ArrayList<Order>();
+    }
+
+    public static OrderManagementService getInstance() {
+        if (instance == null) {
+            instance = new DefaultOrderManagementService();
+        }
+        return instance;
     }
 
     @Override
-    public void setCreditCardNumber(String userInput) {
-
+    public void addOrder(Order order) {
+        Orders.add(order);
     }
 
     @Override
-    public void setProducts(ArrayList<Product> products) {
-
+    public ArrayList<Order> getOrdersByUserId(int userId) {
+        ArrayList<Order> ordersWithId = new ArrayList<>();
+        for (int i =0; i< Orders.size(); i++){
+            if(Orders.get(i).getCustomerId() == userId){
+                ordersWithId.add(Orders.get(i));
+            }
+        }
+        return ordersWithId;
     }
 
     @Override
-    public void setCustomerId(int customerId) {
-
-    }
-
-    @Override
-    public int getCustomerId() {
-        return 0;
+    public ArrayList<Order> getOrders() {
+        return Orders;
     }
 }

@@ -2,11 +2,15 @@ package menu.impl;
 
 import configs.ApplicationContext;
 import entities.Cart;
+import entities.Order;
 import entities.Product;
+import entities.impl.DefaultOrder;
 import entities.impl.DefaultProduct;
 import menu.Menu;
+import services.OrderManagementService;
 import services.ProductManagementService;
 import services.UserManagementService;
+import services.impl.DefaultOrderManagementService;
 import services.impl.DefaultProductManagementService;
 import services.impl.DefaultUserManagementService;
 
@@ -17,11 +21,14 @@ public class ShopMenu implements Menu{
 
     private ProductManagementService ProductManagementService;
     private UserManagementService UserManagementService;
+    private OrderManagementService OrderManagementService;
     private ApplicationContext context;
     {
         UserManagementService = DefaultUserManagementService.getInstance();
         ProductManagementService = DefaultProductManagementService.getInstance();
         context = ApplicationContext.getInstance();
+        OrderManagementService = DefaultOrderManagementService.getInstance();
+
     }
 
     @Override
@@ -35,7 +42,8 @@ public class ShopMenu implements Menu{
             System.out.println("1. Add an item to the cart\n" +
                     "2. View cart\n" +
                     "3. Clear cart\n" +
-                    "4. Return to main menu\n" +
+                    "4. Checkout\n" +
+                    "5. Return to main menu\n" +
                     "Please select an option (1-4):");
             String input = scanner.nextLine();
 
@@ -80,6 +88,38 @@ public class ShopMenu implements Menu{
                     System.out.println("Your cart is now cleared\n");
                     break;
                 case "4":
+                    Order order = new DefaultOrder();
+                    while (true) {
+                        if (context.getLoggedInUser() != null){
+                            System.out.println("Enter Credit card number:");
+                            String creditCardNumber = scanner.nextLine();
+                            if (order.isCreditCardNumberValid(creditCardNumber)) {
+                                order.setProducts(cart.getProducts());
+                                order.setCustomerId(context.getLoggedInUser().getId());
+                                order.setCreditCardNumber(creditCardNumber);
+                                OrderManagementService.addOrder(order);
+                                System.out.println("Successfully added your order, " + context.getLoggedInUser().getFirstName() +
+                                        "\nIt shall arrive soon");
+                                System.out.println(cart.isEmpty());
+
+                                Menu mainMenu = new MainMenu();
+                                mainMenu.start();
+                            } else if (creditCardNumber.equals("back"))
+                            {
+                                break;
+                            }
+                        }
+                        else {
+                            System.out.println("Log in to purchase xo");
+                            Menu signUpMenu = new SignUpMenu();
+                            signUpMenu.start();
+                            System.out.println("success :)");
+
+                        }
+                    }
+
+
+                case "5":
                     Menu mainMenu = new MainMenu();
                     mainMenu.start();
                 default:

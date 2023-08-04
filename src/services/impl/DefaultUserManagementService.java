@@ -1,6 +1,7 @@
 package services.impl;
 
 import entities.User;
+import entities.impl.DefaultUser;
 import services.UserManagementService;
 
 import java.util.ArrayList;
@@ -10,12 +11,13 @@ public class DefaultUserManagementService implements UserManagementService {
 
     private static final String NO_ERROR_MESSAGE = "";
 
-    private static final int DEFAULT_USERS_CAPACITY = 10;
+
     private ArrayList<User> UserList;
 
     private static DefaultUserManagementService instance;
     {
         UserList = new ArrayList<User>(10);
+        UserList.add( new DefaultUser("Luke", "Bransby", "Nintendo15.", "luke.bransby15@gmail.com"));
     }
 
 

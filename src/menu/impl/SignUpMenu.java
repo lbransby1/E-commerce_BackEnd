@@ -17,6 +17,10 @@ public class SignUpMenu implements Menu {
         userManagementService = DefaultUserManagementService.getInstance();
         context = ApplicationContext.getInstance();
     }
+    public void startt(Menu menu){
+        this.start();
+        menu.start();
+    }
 
     @Override
     public void start() {
@@ -52,14 +56,19 @@ public class SignUpMenu implements Menu {
                     System.out.println("Registering your account...");
                     User newUser = new DefaultUser(firstName, lastName, password1, email1);
                     String checkEmail = userManagementService.registerUser(newUser);
-                    if (checkEmail == null){validCredentials = true;}
+                    if (checkEmail == null){
+                        validCredentials = true;
+                        User loginUser = userManagementService.getUserByEmail(email1);
+                        context.setLoggedInUser(loginUser);
+                        System.out.println("Hello " + loginUser.getFirstName()+". You are now logged in.");
+                        break;
+                    }
                 }
                 else{System.out.println("Passwords do not match. Please try again\n");}}
             else{System.out.println("Emails do not match or is invalid. Please try again\n");}
         }
-        //once complete
-        Menu mainMenu = new MainMenu();
-        mainMenu.start();
+        System.out.println("done");
+        return;
     }
 
     @Override
