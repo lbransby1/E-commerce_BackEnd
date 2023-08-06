@@ -10,7 +10,9 @@ public class DefaultOrder implements Order {
     private int id;
     private ArrayList<Product> products;
 
-    public DefaultOrder(){}
+    public DefaultOrder(){
+        products = new ArrayList<>();
+    }
 
 
     @Override
@@ -26,7 +28,9 @@ public class DefaultOrder implements Order {
 
     @Override
     public void setProducts(ArrayList<Product> products) {
-        this.products = products;
+        for (int i=0; i<products.size(); i++){
+            this.products.add(products.get(i));
+        }
     }
 
     @Override

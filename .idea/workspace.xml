@@ -4,18 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="390940ad-b088-4ed5-9d47-22aca40e7aee" name="Changes" comment="Finished cart functionality">
+    <list default="true" id="390940ad-b088-4ed5-9d47-22aca40e7aee" name="Changes" comment="Created admin stuff and orders are now more functional">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/configs/ApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/configs/ApplicationContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Order.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entities/impl/DefaultOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/impl/DefaultOrder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/menu/impl/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menu/impl/MainMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/menu/impl/ShopMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menu/impl/ShopMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/menu/impl/SignUpMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menu/impl/SignUpMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/OrderManagementService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/OrderManagementService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/impl/DefaultOrderManagementService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/impl/DefaultOrderManagementService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/impl/DefaultUserManagementService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/impl/DefaultUserManagementService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/menu/impl/SignInMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menu/impl/SignInMenu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,12 +116,30 @@
       <option name="project" value="LOCAL" />
       <updated>1690847312621</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Created admin stuff and orders are now more functional">
+      <created>1691186194222</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1691186194222</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Finished cart functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished cart functionality" />
+    <MESSAGE value="Created admin stuff and orders are now more functional" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created admin stuff and orders are now more functional" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.util.UnknownFormatConversionException" package="java.util" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/E_commerce_BackEnd$Main.ic" NAME="Main Coverage Results" MODIFIED="1690464949076" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

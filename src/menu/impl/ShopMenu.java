@@ -100,7 +100,7 @@ public class ShopMenu implements Menu{
                                 OrderManagementService.addOrder(order);
                                 System.out.println("Successfully added your order, " + context.getLoggedInUser().getFirstName() +
                                         "\nIt shall arrive soon");
-                                System.out.println(cart.isEmpty());
+                                context.getSessionCart().clear();
 
                                 Menu mainMenu = new MainMenu();
                                 mainMenu.start();

@@ -47,7 +47,6 @@ public class SignInMenu implements Menu {
                 System.out.println("Sign in Failed");
             }
         }
-        //TODO confirm the login, set it to logged in then route to main menu again
         User loginUser = userManagementService.getUserByEmail(email);
         context.setLoggedInUser(loginUser);
         System.out.println("Hello " + loginUser.getFirstName()+". You are now logged in.");

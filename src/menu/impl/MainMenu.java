@@ -49,6 +49,7 @@ public class MainMenu implements Menu {
         userManagementService = DefaultUserManagementService.getInstance();
         orderManagementService = DefaultOrderManagementService.getInstance();
         context = ApplicationContext.getInstance();
+        context.getSessionCart();
     }
 
 
@@ -64,72 +65,79 @@ public class MainMenu implements Menu {
                     if (context.getLoggedInUser() == null){
                         Menu signUp = new SignUpMenu();
                         signUp.start();
-                        mainMenu.start();
                     }
                     else{
                         System.out.println("Signing out...");
                         context.setLoggedInUser(null);
-                        mainMenu = new MainMenu();
-                        mainMenu.start();
                     }
                     break;
+
                 case "2":
                     if (context.getLoggedInUser() == null){
                         Menu signInMenu = new SignInMenu();
                         signInMenu.start();
                     }
 
-                    else if(context.getLoggedInUser() == userManagementService.getUserByEmail("luke.bransby15@gmail.com")){
+                    else if(context.isAdmin()){
                         //TODO make a shop management section
                         System.out.println("Shop management");
                     }
                     else{
                         Menu shopMenu = new ShopMenu();
                         shopMenu.start();
-
                     }
-                    mainMenu.start();
+                    break;
+
                 case "3":
                     if(context.getLoggedInUser() == null){
                         Menu shopMenu = new ShopMenu();
                         shopMenu.start();
                     }
-                    else if(context.getLoggedInUser() == userManagementService.getUserByEmail("luke.bransby15@gmail.com")){
+                    else if(context.isAdmin()){
                         ArrayList< Order >allOrders = orderManagementService.getOrders();
 
                         for (int i = 0; i<allOrders.size(); i++){
                             Order o = allOrders.get(i);
-                            System.out.println("\nUser ID: " + o.getCustomerId());
+                            System.out.printf("%-10s %-4s %n","Order ID: " +i ,"User ID: " + o.getCustomerId());
                             ArrayList<Product> items = o.getProducts();
+                            double price=0;
                             for(int j=0; j<items.size(); j++){
-                                System.out.printf("%-6  %-20","£"+ items.get(j).getPrice(), items.get(j).getProductName());
+                                System.out.printf("%-4s %-6s %-20s %n",(j+1)+".","£"+items.get(j).getPrice() , items.get(j).getProductName());
+                                price = price + items.get(j).getPrice();
                             }
-                            System.out.println("\n");
+                            System.out.println("Total: £" +price + "\n");
                         }
                     }
+
                     else{
                         ArrayList< Order >allOrders = orderManagementService.getOrdersByUserId(context.getLoggedInUser().getId());
                         if (allOrders.size() == 0){System.out.println("You have no orders m8");}
                         else {
-                            System.out.println("Here are your orders");
+                            System.out.println("Here are your orders, " +context.getLoggedInUser().getFirstName()+ ":\n");
+
                             for (int i = 0; i < allOrders.size(); i++) {
                                 Order o = allOrders.get(i);
-                                System.out.println("\nUser ID: " + o.getCustomerId());
                                 ArrayList<Product> items = o.getProducts();
+                                System.out.printf("%-10s %-4s %n","Order ID: " +i ,"User ID: " + o.getCustomerId());
+                                double price=0;
+
                                 for (int j = 0; j < items.size(); j++) {
-                                    System.out.printf("%-6  %-20", "£" + items.get(j).getPrice(), items.get(j).getProductName());
+                                    System.out.printf("%-4s %-6s %-20s %n",(j+1)+".","£"+items.get(j).getPrice() , items.get(j).getProductName());
+                                    price = price + items.get(j).getPrice();
                                 }
-                                System.out.println("\n");
+
+                                System.out.println("Total: £" +price + "\n");
                             }
                         }
                     }
-                    mainMenu.start();
                     break;
+
                 case "4":
                     if(context.getLoggedInUser() == null){
                         System.exit(0);
                     }
-                    else if(context.getLoggedInUser() == userManagementService.getUserByEmail("luke.bransby15@gmail.com")){
+
+                    else if(context.isAdmin()){
                         String email = null;
                         try {
                             System.out.println("Enter email of user");
@@ -141,28 +149,31 @@ public class MainMenu implements Menu {
                                 System.out.println("Here are the orders");
                                 for (int i = 0; i < allOrders.size(); i++) {
                                     Order o = allOrders.get(i);
-                                    System.out.println("\nUser ID: " + o.getCustomerId());
                                     ArrayList<Product> items = o.getProducts();
+                                    System.out.printf("%-10s %-4s %n", "Order ID: " + i, "User ID: " + o.getCustomerId());
+                                    double price = 0;
+
                                     for (int j = 0; j < items.size(); j++) {
-                                        System.out.printf("%-6  %-20", "£" + items.get(j).getPrice(), items.get(j).getProductName());
+                                        System.out.printf("%-4s %-6s %-20s %n", (j + 1) + ".", "£" + items.get(j).getPrice(), items.get(j).getProductName());
+                                        price = price + items.get(j).getPrice();
                                     }
-                                    System.out.println("\n");
+                                    System.out.println("Total: £" + price + "\n");
                                 }
                             }
                         }
                         catch (Exception e){
                             System.out.println("Could not find user with that email");
                         }
-
                     }
+
                     else{
                         Menu settingsMenu = new SettingsMenu();
                         settingsMenu.start();
                     }
-                    mainMenu.start();
                     break;
+
                 case "5":
-                    if(context.getLoggedInUser() == userManagementService.getUserByEmail("luke.bransby15@gmail.com")){
+                    if(context.isAdmin()){
                         System.out.println("Manage Services");
                     }
                     else if (context. getLoggedInUser() == null){
@@ -171,48 +182,28 @@ public class MainMenu implements Menu {
                     else{
                         System.exit(0);
                     }
-                    mainMenu.start();
                     break;
 
                 case "6":
-                    if(context.getLoggedInUser() == userManagementService.getUserByEmail("luke.bransby15@gmail.com")){
+                    if(context.isAdmin()){
                         Menu settingsMenu = new SettingsMenu();
                         settingsMenu.start();
                     }
                     else{System.out.println("Invalid input");}
-                    mainMenu.start();
-
-
-//                    if (context.getLoggedInUser() != null){
-//                        Menu settingsMenu = new SettingsMenu();
-//                        settingsMenu.start();
-//                    }
-//                    else{
-//                        System.out.println("Please, log in or create new account to change your account settings\n");
-//                        mainMenu = new MainMenu();
-//                        mainMenu.start();
-//                    }
                     break;
+
                 case "7":
-                    if(context.getLoggedInUser() == userManagementService.getUserByEmail("luke.bransby15@gmail.com")){
+                    if(context.isAdmin()){
                         System.exit(0);
                     }
-
-//                    ArrayList<User> userList = userManagementService.getUsers();
-//                    System.out.println("List of users:");
-//                    for (int i =0; i< userList.size(); i++){
-//                        userList.get(i).toString();
-//                    }
-//                    mainMenu = new MainMenu();
-//                    mainMenu.start();
-//                    break;
-                case "8":
-                    System.exit(0);
+                    else{System.out.println("Invalid input");}
                     break;
+
                 default:
                     System.out.println("Invalid input");
                     mainMenu.start();
             }
+            mainMenu.start();
         }
     }
     public void printMenuHeader(){

@@ -4,14 +4,20 @@ import entities.Cart;
 import entities.User;
 import entities.impl.DefaultCart;
 import menu.Menu;
+import services.UserManagementService;
+import services.impl.DefaultUserManagementService;
 
 public class ApplicationContext {
     private static ApplicationContext instance;
     private User loggedInUser;
     private Menu mainMenu;
     private Cart sessionCart;
+    private UserManagementService userManagementService;
 
     private ApplicationContext() {
+        sessionCart = new DefaultCart();
+        userManagementService = DefaultUserManagementService.getInstance();
+
     }
 
     public void setLoggedInUser(User user) {
@@ -20,6 +26,13 @@ public class ApplicationContext {
         }
 
         this.loggedInUser = user;
+    }
+
+    public boolean isAdmin(){
+        if (getLoggedInUser() == userManagementService.getUserByEmail("luke.bransby15@gmail.com")){
+            return true;
+        }
+        else{return false;}
     }
 
     public User getLoggedInUser() {
